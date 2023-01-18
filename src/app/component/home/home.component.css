@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  align-items: center;
+  top: 30px;
+  left: 50%;
+  min-width: 1000px;
+  transform: translate(-50%, 0%);
+  position: fixed;
+  height: 100vh;
+  overflow: scroll;
+}
+.container .send-message {
+  text-align: left;
+  width: 80%;
+  border: black solid;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+.container .send-message div {
+  margin: 30px auto auto auto;
+  width: 95%;
+}
+.container #posts-container {
+  padding: 20px 20px 100px 20px;
+  width: 100%;
+  overflow: auto;
+}
+.container #posts-container #post-container {
+  display: flex;
+  position: relative;
+}
+.container #posts-container #post-container .post {
+  background-color: rgba(194, 249, 255, 0.73);
+  box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 800px;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.container #posts-container #post-container .post #post-title {
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+}
+.container #posts-container #post-container .post #post-title:before,
+.container #posts-container #post-container .post #post-title:after {
+  content: "-";
+  font-size: 20px;
+}
+.container #posts-container #post-container .right {
+  margin-left: auto;
+  background-color: rgba(255, 247, 192, 0.73);
+}
+.container .form-item {
+  color: white;
+  font-weight: bold;
+  background-color: rgba(59, 63, 81, 0.9);
+}
+.container .logout {
+  font-size: 30px;
+  top: 0;
+  right: 15%;
+  position: absolute;
+}
+.container .hidden {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=home.component.css.map */
