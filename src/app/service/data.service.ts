@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map} from "rxjs/operators";
-import {Res} from "./auth.service";
-import {post} from "../component/home/home.component";
 
 @Injectable({
   providedIn: 'root'
@@ -13,36 +11,43 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  whoami(): Observable<string>{
-    return this.http.get<string>("/api/pub/whoami")
-      .pipe(map(response => {
-        // @ts-ignore
+  whoami(): Observable<string> {
+    return this.http.get<Res>("/api/pub/whoami")
+      .pipe(map((response: Res) => {
         return response['data'];
       }));
   }
 
-  getPost(): Observable<post[]> {
-    return this.http.get<post[]>("/api/sysmgr/posts", {
-      headers: new HttpHeaders({
-        Authorization: localStorage.hasOwnProperty('access_token') !== null ? localStorage.getItem('access_token')! : ""
-      })
-    })
-      .pipe(map(response => {
-        // @ts-ignore
-        return response['data'];
-      }));
+  // createWebSocket(): Observable<string> {
+  //   return this.http.get<Res>("/api/pub/getWebSocketUrl")
+  //     .pipe(map((response: Res) => {
+  //       return response['data'];
+  //     }));
+  // }
+
+  sendMessage(websocket: WebSocket,command: string,message: string): void {
+    websocket.send(JSON.stringify({command:command, message: message}))
   }
 
+  // createWebSocketConnect(url: string): Subject<MessageEvent>{
+  //   // return this.http.get<Res>("/api/pub/getWebSocketUrl")
+  //   //   .pipe(map((response: Res) => {
+  //   //     return response['data'];
+  //   //   }));
+  //   const ws = new WebSocket(url);
+  //   let subject = new Subject();
+  //   const observable = new Observable(obj => {
+  //     obj.next("111");
+  //   })
+  //
+  //   observable.subscribe(subject)
+  // }
 
-  postMessage(title: string, content: string): Observable<post[]> {
-    return this.http.post<post[]>("/api/sysmgr/posts", {title, content}, {
-      headers: new HttpHeaders({
-        Authorization: localStorage.hasOwnProperty('access_token') !== null ? localStorage.getItem('access_token')! : ""
-      })
-    })
-      .pipe(map(response => {
-        // @ts-ignore
-        return response['data'];
-      }));
-  }
+}
+
+export interface Res {
+  result: boolean;
+  code: string;
+  message: string;
+  data: string
 }

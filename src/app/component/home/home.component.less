@@ -1,83 +1,144 @@
-.container{
+//::-webkit-scrollbar {
+//  display:none
+
+@main-color: #dcdcdc;
+@sub-color: #ffffff;
+.container {
+  padding: 0;
+  margin: 0;
+  justify-content: center;
   display: flex;
-  flex-flow: column;
-  text-align: center;
-  align-items: center;
-  top: 30px;
-  left: 50%;
-  min-width: 1000px;
-  transform: translate(-50%, 0%);
-  position: fixed;
+  background-color: @main-color;
   height: 100vh;
-  overflow: scroll;
-  .send-message{
-    text-align: left;
-    width: 80%;
-    border: black solid;
-    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    div{
-      margin: 30px auto auto auto;
-      width: 95%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 1280px;
+  position: fixed;
+  flex-flow: row nowrap;
+
+  .profileImg {
+    vertical-align: top;
+    display: inline-block;
+    border-radius: 50%;
+    height: 42px;
+    width: 42px;
+  }
+
+  .item {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  #userList {
+    background-color: @sub-color;
+    flex-basis: 340px;
+    #selfProfile-box, .userInfo-box {
+      padding: 20px 17px;
+      span {
+        padding-left: 20px;
+        font-size: 20px;
+        line-height: 42px;
+      }
+    }
+
+    #selfProfile-box {
+      #headPortrait-box{
+        line-height: 42px;
+        vertical-align: center;
+      }
+      height: 82px;
+      #logout{
+        padding-left: 20px;
+        border: none;
+        background-color: @sub-color;
+        font-size: 30px;
+      }
+    }
+
+    #userSearch-box {
+      background-color: @main-color;
+      height: 54px;
+      padding: 10px 15px;
+      input {
+        background-color: @sub-color;
+        width: 100%;
+      }
+    }
+
+    #userList-box {
+      .userInfo-box{
+        border-bottom: 1px ridge black;
+      }
+    }
+
+    .userInfo-box:hover {
+      background-color: @main-color;
     }
   }
 
-  #posts-container{
-    padding: 20px 20px 100px 20px;
-    width: 100%;
-    overflow: auto;
-    #post-container{
-      display: flex;
+  #message {
+    position: relative;
+    flex-basis: 900px;
+
+    #mainMsgBoxHead {
+      background-color: @sub-color;
       position: relative;
-      .user{
-        //position: absolute;
-        //top: 0;
-        //left: -15%;
-      }
-      .post{
-        background-color: rgba(194, 249, 255, 0.73);
-        box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.4);
-        border-radius: 10px;
-        margin-top: 20px;
-        width: 800px;
-        padding: 10px;
-        word-wrap: break-word;
-        word-break: break-all;
-        #post-title{
-          color: black;
-          font-weight: bold;
-          font-size: 25px;
-        }
-        #post-title:before,#post-title:after{
-          content: "-";
-          font-size: 20px;
-        }
-        #post-message{
+      padding: 17px 15px;
+      height: 82px;
+
+      #userBase {
+        font-weight: bold;
+        font-size: 20px;
+
+        #mainMsgInput {
+          width: 100%;
         }
       }
-      .right{
-        margin-left: auto;
-        background-color: rgba(255, 247, 192, 0.73);
+    }
+
+    #bigMsgInput {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      input {
+        background-color: @sub-color;
+        outline: 0;
+        height: 80px;
+        width: 100%;
       }
     }
   }
-  .form-item{
-    color: white;
-    font-weight: bold;
-    background-color: rgba(59,63,81,.9);
-  }
-  .logout{
-    font-size: 30px;
-    top: 0;
-    right: 15%;
-    position: absolute;
-  }
-  .hidden{
-    border: none;
-    outline: none;
-    background: transparent;
-  }
 }
-::-webkit-scrollbar {
-  display:none;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

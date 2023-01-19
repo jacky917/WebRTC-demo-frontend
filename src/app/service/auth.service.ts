@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
+import {Res} from "./data.service";
 
 @Injectable({
   providedIn: 'root'
@@ -38,28 +39,11 @@ export class AuthService {
   logout() {
     // 退出登入抹除 JWT
     // localStorage.removeItem('access_token');
+
     this.cookieService.deleteAll('/', 'localhost');
   }
 
   getUserId() {
     return localStorage.getItem('user_id');
   }
-}
-
-
-export interface Res {
-  result: boolean;
-  code: string;
-  message: string;
-  data: {
-    "id": string,
-    "token": string
-  }
-}
-
-export interface post {
-  result: boolean;
-  code: string;
-  message: string;
-  data: string
 }

@@ -1,34 +1,54 @@
 <div class="container">
-  <div class="send-message">
-    <div>
-      <span>當前登入用戶名:{{UserId}}</span>
-      <button class="logout hidden">
-        <i class="bi bi-box-arrow-right" (click)="logout()">Logout</i>
-      </button>
+  <div class="item" id="userList">
+    <div id="selfProfile-box">
+      <div id="headPortrait-box">
+        <img class="profileImg"
+             src="https://ali-global-cdn.hellotalk8.com/avatar/ht-global/221225/116018921_997f6cdf2e78b14adf898de923371bf4.jpg"
+             alt>
+        <span class="userName">{{UserId}}</span>
+        <button id="logout" (click)="logout()">
+          <i class="bi bi-box-arrow-right"></i>
+        </button>
+      </div>
     </div>
-    <form class="message row" [formGroup]="messageForm" (ngSubmit)="submitForm()">
-      <div class="mb-3">
-        <label for="title" class="form-label">標題</label>
-        <input formControlName="title" type="text" class="form-control" id="title" placeholder="title">
+    <div id="userSearch-box">
+      <input class="input-group-text" type="text">
+    </div>
+    <div id="userList-box">
+      <div class="userInfo-box">
+        <img class="profileImg"
+             src="https://ali-global-cdn.hellotalk8.com/avatar/ht-global/221225/116018921_997f6cdf2e78b14adf898de923371bf4.jpg"
+             alt>
+        <span class="userName">Test</span>
       </div>
-      <div class="mb-3">
-        <label for="content" class="form-label">內容</label>
-        <input formControlName="content" type="text" class="form-control" id="content" placeholder="...">
+      <div class="userInfo-box">
+        <img class="profileImg"
+             src="https://ali-global-cdn.hellotalk8.com/avatar/ht-global/221225/116018921_997f6cdf2e78b14adf898de923371bf4.jpg"
+             alt>
+        <span class="userName">Test</span>
       </div>
-      <button class="hidden"></button>
-    </form>
+      <div class="userInfo-box">
+        <img class="profileImg"
+             src="https://ali-global-cdn.hellotalk8.com/avatar/ht-global/221225/116018921_997f6cdf2e78b14adf898de923371bf4.jpg"
+             alt>
+        <span class="userName">Test</span>
+      </div>
+      <div class="userInfo-box">
+        <img class="profileImg"
+             src="https://ali-global-cdn.hellotalk8.com/avatar/ht-global/221225/116018921_997f6cdf2e78b14adf898de923371bf4.jpg"
+             alt>
+        <span class="userName">Test</span>
+      </div>
+    </div>
   </div>
-<!--  <div id="posts-container">-->
-<!--    <div *ngFor="let post of posts" id="post-container">-->
-<!--      <div *ngIf="userFlag(post.postUserId)" class="user">-->
-<!--        <span id="name">用戶ID:{{post.postUserId}}</span>-->
-<!--      </div>-->
-<!--      <div class="post" [class.right]="!userFlag(post.postUserId)">-->
-<!--&lt;!&ndash;        <p id="post-title">{{decrypt(post.title)}}</p>&ndash;&gt;-->
-<!--&lt;!&ndash;        <p id="post-message">{{decrypt(post.content)}}</p>&ndash;&gt;-->
-<!--        <p id="post-title">{{post.title}}</p>-->
-<!--        <p id="post-message">{{post.content}}</p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <div class="item" id="message">
+    <div id="mainMsgBoxHead">
+      <div id="userBase">111</div>
+    </div>
+    <div id="mainMsgWrapper">
+    </div>
+    <div id="bigMsgInput">
+      <input type="text" class="input-group-text" placeholder="please enter a message here">
+    </div>
+  </div>
 </div>

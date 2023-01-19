@@ -1,77 +1,95 @@
 .container {
+  padding: 0;
+  margin: 0;
+  justify-content: center;
   display: flex;
-  flex-flow: column;
-  text-align: center;
-  align-items: center;
-  top: 30px;
-  left: 50%;
-  min-width: 1000px;
-  transform: translate(-50%, 0%);
-  position: fixed;
+  background-color: #dcdcdc;
   height: 100vh;
-  overflow: scroll;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 1280px;
+  position: fixed;
+  flex-flow: row nowrap;
 }
-.container .send-message {
-  text-align: left;
-  width: 80%;
-  border: black solid;
-  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
+.container .profileImg {
+  vertical-align: top;
+  display: inline-block;
+  border-radius: 50%;
+  height: 42px;
+  width: 42px;
 }
-.container .send-message div {
-  margin: 30px auto auto auto;
-  width: 95%;
+.container .item {
+  flex-grow: 1;
+  flex-shrink: 1;
 }
-.container #posts-container {
-  padding: 20px 20px 100px 20px;
+.container #userList {
+  background-color: #ffffff;
+  flex-basis: 340px;
+}
+.container #userList #selfProfile-box,
+.container #userList .userInfo-box {
+  padding: 20px 17px;
+}
+.container #userList #selfProfile-box span,
+.container #userList .userInfo-box span {
+  padding-left: 20px;
+  font-size: 20px;
+  line-height: 42px;
+}
+.container #userList #selfProfile-box {
+  height: 82px;
+}
+.container #userList #selfProfile-box #headPortrait-box {
+  line-height: 42px;
+  vertical-align: center;
+}
+.container #userList #selfProfile-box #logout {
+  padding-left: 20px;
+  border: none;
+  background-color: #ffffff;
+  font-size: 30px;
+}
+.container #userList #userSearch-box {
+  background-color: #dcdcdc;
+  height: 54px;
+  padding: 10px 15px;
+}
+.container #userList #userSearch-box input {
+  background-color: #ffffff;
   width: 100%;
-  overflow: auto;
 }
-.container #posts-container #post-container {
-  display: flex;
+.container #userList #userList-box .userInfo-box {
+  border-bottom: 1px ridge black;
+}
+.container #userList .userInfo-box:hover {
+  background-color: #dcdcdc;
+}
+.container #message {
   position: relative;
+  flex-basis: 900px;
 }
-.container #posts-container #post-container .post {
-  background-color: rgba(194, 249, 255, 0.73);
-  box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  margin-top: 20px;
-  width: 800px;
-  padding: 10px;
-  word-wrap: break-word;
-  word-break: break-all;
+.container #message #mainMsgBoxHead {
+  background-color: #ffffff;
+  position: relative;
+  padding: 17px 15px;
+  height: 82px;
 }
-.container #posts-container #post-container .post #post-title {
-  color: black;
+.container #message #mainMsgBoxHead #userBase {
   font-weight: bold;
-  font-size: 25px;
-}
-.container #posts-container #post-container .post #post-title:before,
-.container #posts-container #post-container .post #post-title:after {
-  content: "-";
   font-size: 20px;
 }
-.container #posts-container #post-container .right {
-  margin-left: auto;
-  background-color: rgba(255, 247, 192, 0.73);
+.container #message #mainMsgBoxHead #userBase #mainMsgInput {
+  width: 100%;
 }
-.container .form-item {
-  color: white;
-  font-weight: bold;
-  background-color: rgba(59, 63, 81, 0.9);
-}
-.container .logout {
-  font-size: 30px;
-  top: 0;
-  right: 15%;
+.container #message #bigMsgInput {
   position: absolute;
+  width: 100%;
+  bottom: 0;
 }
-.container .hidden {
-  border: none;
-  outline: none;
-  background: transparent;
-}
-::-webkit-scrollbar {
-  display: none;
+.container #message #bigMsgInput input {
+  background-color: #ffffff;
+  outline: 0;
+  height: 80px;
+  width: 100%;
 }
 /*# sourceMappingURL=home.component.css.map */
