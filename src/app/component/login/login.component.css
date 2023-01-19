@@ -1,0 +1,31 @@
+.login {
+  justify-content: center;
+  min-width: 450px;
+  width: 450px;
+  height: 330px;
+  padding: 35px 35px 15px 35px;
+  border-radius: 10px;
+  box-shadow: 5px 6px 10px 0 rgba(0, 0, 0, 0.4);
+  display: flex;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(59, 63, 81, 0.9);
+  transform: translate(-50%, -70%);
+  position: fixed;
+}
+.login .from-item {
+  width: 300px;
+}
+.login .btn {
+  width: 50%;
+}
+.login #title {
+  margin: 10px;
+  text-align: center;
+  color: white;
+}
+.login #title span {
+  font-weight: bold;
+  font-size: 28px;
+}
+/*# sourceMappingURL=login.component.css.map */

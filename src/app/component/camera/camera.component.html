@@ -1,0 +1,12 @@
+<h1>WebRTC demo</h1>
+<hr>
+<div id="container">
+  <video #localVideo id="localVideo" autoplay playsinline></video>
+  <video #remoteVideo id="remoteVideo" autoplay playsinline></video>
+  <Button (click)="openCamera()">開始</Button>
+  <Button (click)="callCamera()">呼叫</Button>
+  <Button (click)="hangupCamera()">掛斷</Button>
+</div>
+<div>
+  <Button (click)="test()">測試</Button>
+</div>
