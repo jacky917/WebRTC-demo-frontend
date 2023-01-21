@@ -10,7 +10,6 @@ import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import {HomeComponent} from "./component/home/home.component";
-import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { CookieService } from 'ngx-cookie-service';
   ],
   providers: [
     HttpClientModule,
-    CookieService
   ],
   bootstrap: [AppComponent]
 })

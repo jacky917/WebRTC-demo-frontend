@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-import { CookieService } from 'ngx-cookie-service';
 import {Res} from "./data.service";
 
 @Injectable({
@@ -12,8 +11,7 @@ export class AuthService {
 
   // loginUrl = `http://${location.hostname}/api/pub/login`;
 
-  constructor(private http: HttpClient,
-              private cookieService: CookieService) {
+  constructor(private http: HttpClient) {
   }
 
   login(username: string, password: string): Observable<Res> {
@@ -32,15 +30,16 @@ export class AuthService {
   loggedIn(): boolean {
     // 通過鑑定在 localStorage 是否存有 access_token 來判斷是否已經登入
     // return localStorage.getItem('access_token') !== null;
-    console.log(this.cookieService.get("JSESSIONID") !== null);
-    return this.cookieService.get("JSESSIONID") !== null ;
+    // console.log(this.cookieService.get("JSESSIONID") !== null);
+    // return this.cookieService.get("JSESSIONID") !== null ;
+    return true;
   }
 
   logout() {
     // 退出登入抹除 JWT
     // localStorage.removeItem('access_token');
 
-    this.cookieService.deleteAll('/', 'localhost');
+    // this.cookieService.deleteAll('/', 'localhost');
   }
 
   getUserId() {
